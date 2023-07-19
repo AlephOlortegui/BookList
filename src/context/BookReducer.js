@@ -1,8 +1,10 @@
 const BookReducer = (state,action) => {
   switch (action.type) {
-    /* case value:
-      
-      break; */
+    case "ADD_BOOK":
+      return [
+        ...state,
+        action.payload
+      ]
   
     default:
       return state

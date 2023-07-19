@@ -5,10 +5,11 @@ export const BookContext = createContext()
 
 export const BookProvider = ({children}) => {
   const [books, dispatch] = useReducer(BookReducer, [])
-
+  
   return (
     <BookContext.Provider value={{
-      books
+      books,
+      dispatch
     }}>
       {children}
     </BookContext.Provider>

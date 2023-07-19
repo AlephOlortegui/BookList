@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { BookContext } from '../context/BookContext';
+import {nanoid} from 'nanoid'
 
 const NewBookForm = () => {
+  const {dispatch} = useContext(BookContext)
+
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newBook = {title, author}
+    const newBook = {title, author, id: nanoid()}
     console.log(newBook)
+    dispatch({type: "ADD_BOOK", payload: newBook})
     setTitle('');
     setAuthor('');
   }
