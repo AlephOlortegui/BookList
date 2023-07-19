@@ -1,8 +1,9 @@
-import React from 'react'
-
-const BookDetails = () => {
+const BookDetails = ({book}) => {
   return (
-    <div>BookDetails</div>
+    <li>
+      <div className="title">{book.title}</div>
+      <div className="author">{book.author}</div>
+    </li>
   )
 }
 
